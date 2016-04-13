@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsSampleApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><%= global_title %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <!-- Navigation -->
+  <%= render "layouts/header" %>
 
+  <!-- Container -->
+  <%= yield %>
+
+  <!-- Footer -->
+  <%= render "layouts/footer" %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -9,7 +9,7 @@ describe "LayoutLinks" do
     click_link "Contact"
     expect(page).to have_title 'Contact'
     click_link "Sign Up"
-    expect(page).to have_title 'Inscription'
+    expect(page).to have_title 'Sign Up'
     click_link "Home"
     expect(page).to have_title 'Home'
   end

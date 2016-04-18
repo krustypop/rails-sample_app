@@ -10,7 +10,7 @@ RSpec.describe UsersController, :type => :feature do
     end
     it "should have Inscription in the title" do
       visit '/signup'
-      expect(page).to have_title 'Inscription'
+      expect(page).to have_title 'Sign Up'
     end
   end
 

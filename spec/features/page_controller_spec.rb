@@ -15,23 +15,23 @@ RSpec.describe PagesController, type: :feature do
 
   describe "GET #contact" do
     it "returns http success" do
-      visit '/pages/contact'
+      visit '/contact'
       expect(page).to have_http_status(:success)
     end
     it "should have Contact in the title" do
-      visit '/pages/contact'
+      visit '/contact'
       expect(page).to have_title 'Contact'
     end
   end
 
   describe "GET #about" do
     it "returns http success" do
-      visit '/pages/about'
+      visit '/about'
       expect(page).to have_http_status(:success)
     end
 
     it "should have About in the title" do
-      visit '/pages/about'
+      visit '/about'
       expect(page).to have_title 'About'
     end
   end

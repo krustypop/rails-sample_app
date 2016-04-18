@@ -4,12 +4,12 @@ RSpec.describe UsersController, :type => :feature do
 
   describe "GET /users/new" do
     it "returns http success" do
-      visit '/users/new'
+      visit '/signup'
       expect(page).to have_http_status(:success)
 
     end
     it "should have Inscription in the title" do
-      visit '/users/new'
+      visit '/signup'
       expect(page).to have_title 'Inscription'
     end
   end

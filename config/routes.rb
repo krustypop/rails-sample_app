@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
+  root :to => 'pages#home'
+
+  get '/contact', to: 'pages#contact'
+  get '/about', to: 'pages#about'
+  get '/signup', to: 'users#new'
   resources :users
 
-  root 'pages#home', as: 'home'
-
-  get 'pages/contact', as: 'contact'
-
-  get 'pages/about', as: 'about'
-
   namespace :admin do
-    get '/',  to: 'dashboard#index'
+    root :to => 'dashboard#index'
   end
 end

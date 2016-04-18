@@ -1,15 +1,18 @@
 class User < ActiveRecord::Base
 
-    attr_accessor :nom, :email
+    before_save { self.email = email.downcase }
 
-    email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :name,  presence: true,
+                      length: { maximum: 50 },
+                      uniqueness: { case_sensitive: false }
 
-    validates :name,  :presence => true,
-                      :length   => { :maximum => 50 }
-                      #:unique
-    validates :email, :presence => true,
-                      :format   => { :with => email_regex }
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, presence: true,
+                      length: { maximum: 255 },
+                      format: { with: VALID_EMAIL_REGEX },
+                      uniqueness: { case_sensitive: false }
 
-
-
+    has_secure_password
+    validates :password, presence: true,
+                         length: { minimum: 6 }
 end

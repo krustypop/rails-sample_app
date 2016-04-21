@@ -1,8 +1,8 @@
 %nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
 
-  %a.navbar-brand{:href => "#"} Project name
+  %a.navbar-brand#logo{:href => "#"} SAMPLE APP
 
-  %ul.nav.navbar-nav
+  %ul.nav.navbar-nav.pull-xs-right
     %li.nav-item{:class => active_class?(root_path) }
       = link_to("Home", root_path, class: "nav-link")
 
@@ -11,7 +11,5 @@
 
     %li.nav-item{:class => active_class?(contact_path) }
       = link_to("Contact", contact_path, class: "nav-link")
-
-  .pull-xs-right
     = link_to "Sign Up", signup_path, class: "btn btn-success-outline", style: "margin-left:10px;"
     = link_to "ADM", admin_root_path, class: "btn btn-danger-outline", style: "margin-left:10px;"

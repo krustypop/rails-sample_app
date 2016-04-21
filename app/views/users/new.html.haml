@@ -7,32 +7,33 @@
   .col-md-9.col-md-offset-3
 
     = form_for(@user) do |f|
+      = render 'shared/error_messages' 
 
       .form-group.row
-        = f.label :name, class: "col-sm-2 form-control-label"
+        = f.label :name, class: "col-sm-2 "
         .col-sm-6
           = f.text_field :name, class: "form-control", placeholder: :name
 
       .form-group.row
-        = f.label :email, class: "col-sm-2 form-control-label"
+        = f.label :email, class: "col-sm-2 "
         .col-sm-6
           = f.email_field :email, class: "form-control", placeholder: :email
 
       .form-group.row
-        = f.label :admin, class: "col-sm-2 form-control-label"
-        .col-sm-6
-          = f.check_box :admin, class: "form-control"
+        = f.label :admin, "Admin ?", class: "col-sm-2 "
+        .col-sm-10
+          = f.check_box :admin
 
       .form-group.row
-        = f.label :password, class: "col-sm-2 form-control-label"
+        = f.label :password, class: "col-sm-2"
         .col-sm-6
           = f.password_field :password, class: "form-control"
 
       .form-group.row
-        = f.label :password_confirmation, "Confirmation", class: "col-sm-2 form-control-label"
+        = f.label :password_confirmation, "Confirmation", class: "col-sm-2 "
         .col-sm-6
           = f.password_field :password_confirmation, class: "form-control"
 
       .form-group.row
-        .col-sm-offset-2.col-sm-10
-          = f.submit "Create my account", class: "btn btn-primary"
+        .col-sm-10
+          = f.submit "Create my account", class: "btn btn-info col-sm-10"

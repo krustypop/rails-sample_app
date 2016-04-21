@@ -141,6 +141,23 @@ aside {
   margin-top: 15px;
 }
 
+/* forms */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-danger;
+  label {
+    color: $state-danger-text;
+  }
+}
+
 
 /* miscellaneous */
 

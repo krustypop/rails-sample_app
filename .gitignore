@@ -13,3 +13,5 @@
 /tmp
 Gemfile.lock
 exos.rb
+/db/development.sqlite3
+/db/test.sqlite3

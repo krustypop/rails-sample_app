@@ -53,7 +53,7 @@ group :development, :test do
   gem 'rspec'
   gem 'webrat', '0.7.1'
   gem 'capybara'
-
+  gem 'assert_difference'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

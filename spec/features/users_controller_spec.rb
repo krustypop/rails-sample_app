@@ -8,9 +8,24 @@ RSpec.describe UsersController, :type => :feature do
       expect(page).to have_http_status(:success)
 
     end
-    it "should have Inscription in the title" do
+    it "should have Signup in the title" do
       visit '/signup'
-      expect(page).to have_title 'Sign Up'
+      expect(page).to have_title 'Sign up'
+    end
+  end
+
+  describe 'POST /users/create' do
+    it "invalid signup information" do
+     visit '/signup'
+     before_save = User.count
+     post users_path, :user => { :name =>  "",
+                               :email => "user@invalid",
+                               :password =>              "foo",
+                               :password_confirmation => "bar",
+                               :admin => false }
+     after_save = User.count
+     before_save.should eq(after_save)
+     assert_template 'users/new'
     end
   end
 

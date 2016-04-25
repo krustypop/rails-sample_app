@@ -1,0 +1,5 @@
+popo:
+  name: popo
+  email: arnaud.polette@gmail.com
+  password_digest: <%= User.digest('password') %>
+  admin: true

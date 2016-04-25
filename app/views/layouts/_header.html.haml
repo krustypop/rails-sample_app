@@ -13,13 +13,13 @@
       = link_to("Contact", contact_path, class: "nav-link")
 
     -if logged_in?
-      %li.nav-item
+      %li.nav-item.active
         %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => current_user, :role => "button"}
           Hi
           = current_user.name
         .dropdown-menu.dropdown-menu-right
-          %a.dropdown-item{:href => current_user} Profile
-          %a.dropdown-item{:href => "#"} Settings
+          = link_to "Profile", current_user, class: "dropdown-item"
+          = link_to "Settings", '#', class: "dropdown-item"
           .dropdown-divider
           = link_to "Log out", logout_path, method: :delete, class: "dropdown-item"
     -else

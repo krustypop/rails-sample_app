@@ -15,14 +15,12 @@
     -if logged_in?
       %li.nav-item.active
         %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-          Hi
-          = current_user.name
+          Hi #{current_user.name}
         .dropdown-menu.dropdown-menu-right
           = link_to "Profile", current_user, class: "dropdown-item"
           = link_to "Settings", '#', class: "dropdown-item"
-          %a.dropdown-item{:href => "#"}
           .dropdown-divider
-          = link_to "Log out", logout_path, method: :delete, class: "dropdown-item"
+          = button_to("Log out", logout_path, method: :delete, class: "dropdown-item")
     -else
       = link_to "Sign in", login_path, class: "btn btn-success-outline", style: "margin-left:10px;"
       = link_to "Sign up", signup_path, class: "btn btn-info-outline"

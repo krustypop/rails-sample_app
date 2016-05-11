@@ -5,45 +5,45 @@
 
 .gravatar_edit
   .row
-    .col-md-9.col-md-offset-3
+    .col-md-3
       = gravatar_for @user
-
-  .row
-    .col-md-9.col-md-offset-3
+      %br
       = link_to 'change', 'http://gravatar.com/emails', target: '_blank'
 
-.row
-  .col-md-9.col-md-offset-3
+    .col-md-9
+      = form_for(@user) do |f|
+        = render 'shared/error_messages'
 
+        .form-group.row
+          = f.label :name, class: "col-sm-3"
+          .col-sm-7
+            = f.text_field :name, class: "form-control", placeholder: :name
 
-    = form_for(@user) do |f|
-      = render 'shared/error_messages'
+        .form-group.row
+          = f.label :email, class: "col-sm-3"
+          .col-sm-7
+            = f.email_field :email, class: "form-control", placeholder: :email
 
-      .form-group.row
-        = f.label :name, class: "col-sm-2 "
-        .col-sm-6
-          = f.text_field :name, class: "form-control", placeholder: :name
+        .form-group.row
+          = f.label :admin, "Admin ?", class: "col-sm-3"
+          .col-sm-7
+            = f.check_box :admin
 
-      .form-group.row
-        = f.label :email, class: "col-sm-2 "
-        .col-sm-6
-          = f.email_field :email, class: "form-control", placeholder: :email
+        .row
+          .col-md-10
+            %hr
+        %br
 
-      .form-group.row
-        = f.label :admin, "Admin ?", class: "col-sm-2 "
-        .col-sm-10
-          = f.check_box :admin
+        .form-group.row
+          = f.label :password, class: "col-sm-3"
+          .col-sm-7
+            = f.password_field :password, class: "form-control"
 
-      .form-group.row
-        = f.label :password, class: "col-sm-2"
-        .col-sm-6
-          = f.password_field :password, class: "form-control"
+        .form-group.row
+          = f.label :password_confirmation, "Confirmation", class: "col-sm-3"
+          .col-sm-7
+            = f.password_field :password_confirmation, class: "form-control"
 
-      .form-group.row
-        = f.label :password_confirmation, "Confirmation", class: "col-sm-2 "
-        .col-sm-6
-          = f.password_field :password_confirmation, class: "form-control"
-
-      .form-group.row
-        .col-sm-10
-          = f.submit "Save changes", class: "btn btn-info col-sm-10"
+        .form-group.row
+          .col-sm-10
+            = f.submit "Save changes", class: "btn btn-info col-sm-12"

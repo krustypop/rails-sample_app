@@ -36,6 +36,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'sqlite3'
 
+gem 'will_paginate', '3.1.0'
+gem 'bootstrap-will_paginate'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -50,4 +53,5 @@ group :development, :test do
   gem "haml-rails", "~> 0.9"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'faker', '1.6.3'
 end

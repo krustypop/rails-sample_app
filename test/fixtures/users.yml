@@ -3,3 +3,9 @@ popo:
   email: arnaud.polette@gmail.com
   password_digest: <%= User.digest('password') %>
   admin: true
+
+mounet:
+  name: mounet
+  email: mounet@gmail.com
+  password_digest: <%= User.digest('password') %>
+  admin: false
